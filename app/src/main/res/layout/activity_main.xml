@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.root.cryptoboxhslfinder.MainActivity">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="237dp"
+        android:layout_height="288dp"
+        app:srcCompat="@mipmap/ic_launcher_round"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <SeekBar
+        android:id="@+id/HueMin"
+        android:layout_width="321dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/imageView"
+        android:max="360"
+        />
+
+    <SeekBar
+        android:id="@+id/Saturation"
+        android:layout_width="321dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editText4"
+        android:max="100" />
+
+    <SeekBar
+        android:id="@+id/Lightness"
+        android:layout_width="321dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editText5"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/HueMinValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Saturation"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/HueMin"
+        android:layout_toEndOf="@+id/HueMin"
+        android:layout_toRightOf="@+id/HueMin"
+        android:textIsSelectable="false"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/SaturationValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Lightness"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/HueMinValue"
+        android:layout_toEndOf="@+id/HueMin"
+        android:layout_toRightOf="@+id/HueMin"
+        android:textIsSelectable="false"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/LightnessValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Lightness"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/SaturationValue"
+        android:layout_toEndOf="@+id/Saturation"
+        android:layout_toRightOf="@+id/Saturation"
+        android:textIsSelectable="false"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/HueMin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Hue Min" />
+
+    <TextView
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/HueMin"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Hue Max" />
+
+    <SeekBar
+        android:id="@+id/HueMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editText3"
+        android:layout_toLeftOf="@+id/HueMinValue"
+        android:layout_toStartOf="@+id/HueMinValue"
+        android:progress="360"
+        android:max="360" />
+
+    <TextView
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/HueMax"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Saturaion" />
+
+    <TextView
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Saturation"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Lightness" />
+
+    <TextView
+        android:id="@+id/HueMaxValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/HueMax"
+        android:layout_toEndOf="@+id/HueMax"
+        android:layout_toRightOf="@+id/HueMax"
+        android:text="360" />
+
+    <Button
+        android:id="@+id/takePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText2"
+        android:layout_alignEnd="@+id/HueMaxValue"
+        android:layout_alignRight="@+id/HueMaxValue"
+        android:layout_marginBottom="106dp"
+        android:text="Choose Pic" />
+
+
+</android.widget.RelativeLayout>
