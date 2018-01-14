@@ -425,6 +425,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap , 0, 0, scaledBitmap .getWidth(), scaledBitmap .getHeight(), matrix, true);
                 bmpSrc = scaleImage(rotatedBitmap);
+                findCryptobox();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
 
