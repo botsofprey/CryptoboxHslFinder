@@ -24,8 +24,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    SeekBar HueMin, HueMax, Saturation, Lightness;
-    TextView HueMinValue, HueMaxValue, SaturationValue, LightnessValue;
+    SeekBar HueMin, HueMax, Saturation, SaturationMax, Lightness, LightnessMax;
+    TextView HueMinValue, HueMaxValue, SaturationValue, SaturationMaxValue, LightnessValue, LightnessMaxValue;
     Button takePic;
     ImageView image;
     Bitmap bmpSrc = null;
@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         HueMaxValue = (TextView) findViewById(R.id.HueMaxValue);
         SaturationValue = (TextView) findViewById(R.id.SaturationValue);
         LightnessValue = (TextView) findViewById(R.id.LightnessValue);
+        SaturationMaxValue = (TextView) findViewById(R.id.textView3);
+        LightnessMaxValue = (TextView) findViewById(R.id.textView4);
+
 
         takePic = (Button)findViewById(R.id.takePic);
 
@@ -86,6 +89,22 @@ public class MainActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
+        SaturationMax = (SeekBar) findViewById(R.id.SaturationMax);
+        SaturationMax.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressChangedValue = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                SaturationMaxValue.setText("" + progress);
+                findCryptobox();
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
         Saturation = (SeekBar) findViewById(R.id.Saturation);
         Saturation.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progressChangedValue = 0;
@@ -121,6 +140,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        LightnessMax = (SeekBar) findViewById(R.id.LightnessMax);
+        LightnessMax.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressChangedValue = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                LightnessMaxValue.setText("" + progress);
+                findCryptobox();
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
         image = (ImageView)findViewById(R.id.imageView);
         bmp = loadImage();
         findCryptobox();
@@ -392,9 +428,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean checkIfBlue(float [] hsl){
         if (hsl[0] > HueMin.getProgress() && hsl[0] < HueMax.getProgress() || (HueMax.getProgress() < HueMin.getProgress()) && hsl[0] < HueMin.getProgress() || hsl[0] > HueMax.getProgress()) {
             //make sure it's not a white blue
-            if (hsl[1] > Saturation.getProgress()/100.0) {
+            if (hsl[1] >= Saturation.getProgress()/100.0 && hsl[1] <= SaturationMax.getProgress()/100.0) {
                 //make sure it's not a black blue
-                if (hsl[2] > Lightness.getProgress()/100.0) {
+                if (hsl[2] >= Lightness.getProgress()/100.0 && hsl[2] <= LightnessMax.getProgress()/100.0) {
                     return true;
                 }
             }

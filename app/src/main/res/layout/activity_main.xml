@@ -21,6 +21,7 @@
         android:max="360"
         />
 
+
     <SeekBar
         android:id="@+id/Saturation"
         android:layout_width="321dp"
@@ -130,7 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/Saturation"
+        android:layout_below="@+id/SaturationMax"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Lightness" />
@@ -153,6 +154,69 @@
         android:layout_alignRight="@+id/HueMaxValue"
         android:layout_marginBottom="106dp"
         android:text="Choose Pic" />
+
+    <SeekBar
+        android:id="@+id/SaturationMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_toLeftOf="@+id/SaturationValue"
+        android:layout_toStartOf="@+id/SaturationValue"
+        android:max="100"
+        android:progress="100" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Saturation"
+        android:text="TextView"
+        tools:text="Saturation Max" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Lightness"
+        android:text="TextView"
+        tools:text="LightnessMax" />
+
+    <SeekBar
+        android:id="@+id/LightnessMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_toLeftOf="@+id/LightnessValue"
+        android:layout_toStartOf="@+id/LightnessValue"
+        android:max="100"
+        android:progress="100" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/SaturationMax"
+        android:layout_toEndOf="@+id/SaturationMax"
+        android:layout_toRightOf="@+id/SaturationMax"
+        android:text="100" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/LightnessMax"
+        android:layout_toEndOf="@+id/LightnessMax"
+        android:layout_toRightOf="@+id/LightnessMax"
+        android:text="TextView"
+        tools:text="100" />
 
 
 </android.widget.RelativeLayout>
